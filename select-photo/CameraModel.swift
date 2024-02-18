@@ -8,6 +8,7 @@
 import Foundation
 import AVFoundation
 import SwiftUI
+import Photos
 
 class CameraModel: NSObject ,ObservableObject, AVCapturePhotoCaptureDelegate {
     
@@ -18,6 +19,12 @@ class CameraModel: NSObject ,ObservableObject, AVCapturePhotoCaptureDelegate {
     @Published var preview: AVCaptureVideoPreviewLayer!
     @Published var isSaved = false
     @Published var picData = Data(count: 0)
+    
+//    var isPhotoAccessGranted: Bool {
+//        get async {
+//            
+//        }
+//    }
     
     func check() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
